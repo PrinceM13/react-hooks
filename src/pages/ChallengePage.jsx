@@ -26,7 +26,8 @@ const useTextDecryption = (data, interval = 3000) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setSubText((previous) => data[currentIndex].slice(0, previous.length + 1));
-    }, interval / data[currentIndex].length);
+    }, 50); // interval / data[currentIndex].length
+
     return () => clearInterval(intervalId);
   }, [data.length, interval, currentIndex]);
 
